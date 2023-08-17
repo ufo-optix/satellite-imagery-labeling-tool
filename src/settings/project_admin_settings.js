@@ -29,17 +29,17 @@
 	 * An initial set of basemap layers to choose from. 
 	 */
 	layers: {	
-		'ESRI World Imagery': {
-			type: 'TileLayer',
-			minSourceZoom: 1,
-			maxSourceZoom: 19,
-			tileSize: 256,
-			tileUrl: 'https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'
-		}, 
-		'USGS - US Imagery': {
-			type: 'OgcMapLayer',
-			url: 'https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryOnly/MapServer/WMTS/1.0.0/WMTSCapabilities.xml'
-		},  	
+		// 'ESRI World Imagery': {
+		// 	type: 'TileLayer',
+		// 	minSourceZoom: 1,
+		// 	maxSourceZoom: 19,
+		// 	tileSize: 256,
+		// 	tileUrl: 'https://services.arcgisonline.com/arcgis/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'
+		// }, 
+		// 'USGS - US Imagery': {
+		// 	type: 'OgcMapLayer',
+		// 	url: 'https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryOnly/MapServer/WMTS/1.0.0/WMTSCapabilities.xml'
+		// },  	
 		'Open Street Maps': {
 			type: 'TileLayer',							
 			minSourceZoom: 1,
@@ -49,31 +49,31 @@
 			tileUrl: 'https://{subdomain}.tile.openstreetmap.org/{z}/{x}/{y}.png',
 			enabled: false
 		},   
-		'BasemapAT.orthofoto': {			
-			type: 'TileLayer',
-			minSourceZoom: 1,
-			maxSourceZoom: 20,
-			bounds: [8.782379, 46.35877, 17.189532, 49.037872],
-			tileSize: 256,
-			tileUrl: 'https://maps{subdomain}.wien.gv.at/basemap/bmaporthofoto30cm/normal/google3857/{z}/{y}/{x}.jpeg',
-			subdomains: ['', '1', '2', '3', '4'],
-			enabled: false
-		},
-		'Luxembourg - Latest Aerial': {
-			type: 'OgcMapLayer',
-			actoveLayer: 'ortho_latest',
-			url: 'https://wmts1.geoportail.lu/opendata/service',
-			enabled: false
-		},
-		'SwissFederalGeoportal.SWISSIMAGE': {
-			type: 'TileLayer',
-			minSourceZoom: 2,
-			maxSourceZoom: 19,
-			bounds: [5.140242, 45.398181, 11.47757, 48.230651],
-			tileSize: 256,
-			tileUrl: 'https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.swissimage/default/current/3857/{z}/{x}/{y}.jpeg',
-			enabled: false
-		}
+		// 'BasemapAT.orthofoto': {			
+		// 	type: 'TileLayer',
+		// 	minSourceZoom: 1,
+		// 	maxSourceZoom: 20,
+		// 	bounds: [8.782379, 46.35877, 17.189532, 49.037872],
+		// 	tileSize: 256,
+		// 	tileUrl: 'https://maps{subdomain}.wien.gv.at/basemap/bmaporthofoto30cm/normal/google3857/{z}/{y}/{x}.jpeg',
+		// 	subdomains: ['', '1', '2', '3', '4'],
+		// 	enabled: false
+		// },
+		// 'Luxembourg - Latest Aerial': {
+		// 	type: 'OgcMapLayer',
+		// 	actoveLayer: 'ortho_latest',
+		// 	url: 'https://wmts1.geoportail.lu/opendata/service',
+		// 	enabled: false
+		// },
+		// 'SwissFederalGeoportal.SWISSIMAGE': {
+		// 	type: 'TileLayer',
+		// 	minSourceZoom: 2,
+		// 	maxSourceZoom: 19,
+		// 	bounds: [5.140242, 45.398181, 11.47757, 48.230651],
+		// 	tileSize: 256,
+		// 	tileUrl: 'https://wmts.geo.admin.ch/1.0.0/ch.swisstopo.swissimage/default/current/3857/{z}/{x}/{y}.jpeg',
+		// 	enabled: false
+		// }
 	},
 
 	/** 
