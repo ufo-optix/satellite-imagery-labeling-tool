@@ -1,0 +1,17 @@
+name: Deploy
+on:
+  workflow_dispatch:
+jobs:
+  ssh-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install SSH key
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+      - name: SSH into 172.31.42.234 via jumpbox 44.217.186.125
+        run: |
+          ssh -J ec2-user@44.217.186.125 ubuntu@172.31.42.234
+          cd satellite-imagery-labeling-tool/
+          git pull
+          cp -r src/* /opt/www/label/
