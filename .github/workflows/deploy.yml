@@ -9,9 +9,11 @@ jobs:
         uses: webfactory/ssh-agent@v0.5.3
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-      - name: SSH into 172.31.42.234 via jumpbox 44.217.186.125
+      - name: SSH into server via jumpbox
         run: |
-          ssh -J ec2-user@44.217.186.125 ubuntu@172.31.42.234
+          ${{ secrets.JUMP_BOX_HOST }} >> ~/.ssh/known_hosts
+          ${{ secrets.SERVER_KNOWN_HOST }} >> ~/.ssh/known_hosts
+          ssh -J {{ secrets.JUMP_BOX_USER }}@${{ secrets.JUMP_BOX_IP }} ${{ secrets.USER }}@${{ secrets.SERVER_IP }}
           cd satellite-imagery-labeling-tool/
           git pull
           cp -r src/* /opt/www/label/
